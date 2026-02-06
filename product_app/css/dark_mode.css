@@ -1,0 +1,234 @@
+/* === THÈME SOMBRE === */
+body.dark-mode {
+  --light-gray: #121212;
+  --white: #1e1e1e;
+  --dark-blue: #bbbbbb;
+  --primary-blue: #3a9dff;
+  --secondary-blue: #2a7dcc;
+  --light-blue: #2a2a3a;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #e0e0e0;
+}
+
+body.dark-mode .sidebar {
+  background: #1a1a1a;
+  border-right: 1px solid #333;
+}
+
+body.dark-mode .panel {
+  background: #252525;
+  border: 1px solid #333;
+}
+
+body.dark-mode .stat-card {
+  background: #2a2a2a;
+}
+
+body.dark-mode .file-upload {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark-mode .instructions {
+  background: #2a2a3a;
+}
+
+body.dark-mode .phone-display {
+  background: #2a2a2a;
+  border-left-color: var(--primary-blue);
+}
+
+body.dark-mode .file-item {
+  background: #2a2a2a;
+}
+
+body.dark-mode .preview-container {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark-mode .preview-placeholder {
+  color: #aaa;
+}
+
+body.dark-mode .form-control {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .form-control:focus {
+  background: #333;
+}
+
+/* Bouton thème */
+.theme-toggle {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-left: 15px;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(30deg);
+  background: var(--secondary-blue);
+}
+
+/* === PANEL LISTE DES FICHIERS TRAITÉS === */
+.batch-results-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  max-height: 500px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: 2px solid var(--primary-blue);
+  display: none;
+  overflow: hidden;
+}
+
+body.dark-mode .batch-results-panel {
+  background: #252525;
+  border-color: var(--primary-blue);
+}
+
+.batch-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--primary-blue);
+  color: white;
+}
+
+.batch-results-header h4 {
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.batch-results-header h4 i {
+  margin-right: 10px;
+}
+
+.close-results {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-results:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.batch-results-content {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.batch-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: var(--light-gray);
+  border-radius: 6px;
+  border-left: 4px solid var(--success);
+}
+
+body.dark-mode .batch-result-item {
+  background: #2a2a2a;
+}
+
+.batch-result-name {
+  font-size: 13px;
+  font-weight: 600;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.batch-result-number {
+  font-size: 12px;
+  background: var(--primary-blue);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: 10px;
+}
+
+.batch-results-footer {
+  padding: 12px 20px;
+  background: var(--light-blue);
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+body.dark-mode .batch-results-footer {
+  background: #2a2a3a;
+  color: #aaa;
+}
+
+/* Bouton pour afficher la liste */
+.show-results-btn {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: var(--success);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+  z-index: 999;
+  display: none;
+}
+
+.show-results-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+/* Responsive pour le panel */
+@media (max-width: 768px) {
+  .batch-results-panel {
+    width: calc(100% - 40px);
+    max-height: 300px;
+    bottom: 80px;
+  }
+  
+  .show-results-btn {
+    bottom: 140px;
+  }
+}
